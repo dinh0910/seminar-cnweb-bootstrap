@@ -4,6 +4,7 @@ var bodyParser = require('body-parser')
 var session = require('express-session')
 
 var indexRouter = require('./routes/index')
+var aoRouter = require('./routes/ao')
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
@@ -40,6 +41,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', indexRouter)
+app.use('/ao', aoRouter)
 
 app.listen(3000, function () {
     console.log('Server is running! :D')
